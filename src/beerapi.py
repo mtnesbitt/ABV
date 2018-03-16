@@ -34,6 +34,7 @@ def write_beer_inventory():
         error_msg = format(type(err).__name__) + " " + error[arrayLen - 2][1:] + ":" + error[arrayLen - 1][:-4] + ")"
         logging.warning(error_msg)
         pass
+
 def run():
     """
     Runs write_beer_inventory every 20 minutes
@@ -49,7 +50,6 @@ def run():
     while True:
         write_beer_inventory()
         time.sleep(seconds_between_fetches)
-
 
 if __name__ == "__main__":
     logging.basicConfig(filename='abv.log', level=logging.INFO, format='%(asctime)s:%(message)s')
